@@ -6,6 +6,15 @@ namespace Skiel85.Ar.Finanzas.Cxu
 {
     public class CalculadoraDv
     {
+        private readonly CbuParser _parser;
+        private readonly CbuBuilder _builder;
+
+        public CalculadoraDv()
+        {
+            _parser = new CbuParser();
+            _builder = new CbuBuilder();
+        }
+
         public (int, int) CalcularDvs(CbuEnComponentes cbu)
         {
             return (CalcularDvBloque1(cbu), CalcularDvBloque2(cbu));
@@ -57,6 +66,30 @@ namespace Skiel85.Ar.Finanzas.Cxu
             else { result = auxSuma - suma; }
 
             return (int)result;
+        }
+
+        public bool DvEsValido(Cbu cbu)
+        {
+            var cbuEnComponentes = _parser.ParseCbuEnComponentes(cbu.ToString());
+            return DvEsValido(cbuEnComponentes);
+        }
+
+        public bool DvEsValido(CbuEnComponentes cbu)
+        {
+            var (dv1, dv2) = CalcularDvs(cbu);
+            return cbu.DvBloque1 == dv1.ToString() && cbu.DvBloque2 == dv2.ToString();
+        }
+
+        public Cbu CorregirDvs(Cbu cbu)
+        {
+            var cbuEnComponentes = _parser.ParseCbuEnComponentes(cbu.ToString());
+            return CorregirDvs(cbuEnComponentes);
+        }
+
+        public Cbu CorregirDvs(CbuEnComponentes cbu)
+        {
+            var (dv1, dv2) = this.CalcularDvs(cbu);
+            return _builder.CrearCbu(cbu.NroEntidad, cbu.NroSucursal, dv1.ToString(), cbu.NroCuenta, dv2.ToString());
         }
     }
 }

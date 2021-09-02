@@ -27,20 +27,13 @@ namespace Skiel85.Ar.Finanzas.Cxu
         private bool DvEsValido()
         {
             var calculadora = new CalculadoraDv();
-            var parser = new CbuParser();
-            var cbuEnComponentes = parser.ParseCbuEnComponentes(this.ToString());
-            var (dv1, dv2) = calculadora.CalcularDvs(cbuEnComponentes);
-            return cbuEnComponentes.DvBloque1 == dv1.ToString() && cbuEnComponentes.DvBloque2 == dv2.ToString();
+            return calculadora.DvEsValido(this);
         }
 
         public Cbu CorregirDvs()
         {
             var calculadora = new CalculadoraDv();
-            var parser = new CbuParser();
-            var cbuEnComponentes = parser.ParseCbuEnComponentes(this.ToString());
-            var (dv1, dv2) = calculadora.CalcularDvs(cbuEnComponentes);
-            var builder = new CbuBuilder();
-            return builder.CrearCbu(cbuEnComponentes.NroEntidad, cbuEnComponentes.NroSucursal, dv1.ToString(), cbuEnComponentes.NroCuenta, dv2.ToString());
+            return calculadora.CorregirDvs(this);
         }
     }
 }
