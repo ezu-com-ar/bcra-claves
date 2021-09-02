@@ -4,12 +4,12 @@ using System.Text;
 
 namespace Skiel85.Ar.Finanzas.Cxu
 {
-    public class CalculadoraDv
+    public class CalculadoraDvs
     {
         private readonly CbuParser _parser;
         private readonly CbuBuilder _builder;
 
-        public CalculadoraDv()
+        public CalculadoraDvs()
         {
             _parser = new CbuParser();
             _builder = new CbuBuilder();
@@ -68,13 +68,13 @@ namespace Skiel85.Ar.Finanzas.Cxu
             return (int)result;
         }
 
-        public bool DvEsValido(Cbu cbu)
+        public bool DvsSonValidos(Cbu cbu)
         {
             var cbuEnComponentes = _parser.ParseCbuEnComponentes(cbu.ToString());
-            return DvEsValido(cbuEnComponentes);
+            return DvsSonValidos(cbuEnComponentes);
         }
 
-        public bool DvEsValido(CbuEnComponentes cbu)
+        public bool DvsSonValidos(CbuEnComponentes cbu)
         {
             var (dv1, dv2) = CalcularDvs(cbu);
             return cbu.DvBloque1 == dv1.ToString() && cbu.DvBloque2 == dv2.ToString();

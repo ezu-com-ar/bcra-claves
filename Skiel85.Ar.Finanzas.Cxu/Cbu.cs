@@ -21,18 +21,18 @@ namespace Skiel85.Ar.Finanzas.Cxu
 
         public bool EsValido()
         {
-            return _valor.Length == 22 && Regex.IsMatch(_valor, @"^\d+$") && DvEsValido();
+            return _valor.Length == 22 && Regex.IsMatch(_valor, @"^\d+$") && DvsSonValidos();
         }
 
-        private bool DvEsValido()
+        private bool DvsSonValidos()
         {
-            var calculadora = new CalculadoraDv();
-            return calculadora.DvEsValido(this);
+            var calculadora = new CalculadoraDvs();
+            return calculadora.DvsSonValidos(this);
         }
 
         public Cbu CorregirDvs()
         {
-            var calculadora = new CalculadoraDv();
+            var calculadora = new CalculadoraDvs();
             return calculadora.CorregirDvs(this);
         }
     }

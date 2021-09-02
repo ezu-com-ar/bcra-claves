@@ -65,7 +65,7 @@ namespace Skiel85.Ar.Finanzas.Cxu.Test
         }
 
         [Fact]
-        public void CorreccionDv()
+        public void CorreccionDvs()
         {
             var cbuBuilder = new CbuBuilder();
             var cbu = cbuBuilder.CrearCbu(UnCbuConDvsIncorrectosStr);
