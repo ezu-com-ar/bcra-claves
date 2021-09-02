@@ -32,5 +32,15 @@ namespace Skiel85.Ar.Finanzas.Cxu
             var (dv1, dv2) = calculadora.CalcularDvs(cbuEnComponentes);
             return cbuEnComponentes.DvBloque1 == dv1.ToString() && cbuEnComponentes.DvBloque2 == dv2.ToString();
         }
+
+        public Cbu CorregirDvs()
+        {
+            var calculadora = new CalculadoraDv();
+            var parser = new CbuParser();
+            var cbuEnComponentes = parser.ParseCbuEnComponentes(this.ToString());
+            var (dv1, dv2) = calculadora.CalcularDvs(cbuEnComponentes);
+            var builder = new CbuBuilder();
+            return builder.CrearCbu(cbuEnComponentes.NroEntidad, cbuEnComponentes.NroSucursal, dv1.ToString(), cbuEnComponentes.NroCuenta, dv2.ToString());
+        }
     }
 }
