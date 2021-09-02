@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Skiel85.Ar.Finanzas.Cxu.Test
 {
-    public class CreacionCbuTest
+    public class CbuBuilderTest
     {
         private const string UnCbuValidoStr = "0110012920000091344977";
         private const string UnCbuValidoBloque1Str = "01100129";
