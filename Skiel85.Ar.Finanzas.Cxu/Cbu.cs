@@ -21,7 +21,16 @@ namespace Skiel85.Ar.Finanzas.Cxu
 
         public bool EsValido()
         {
-            return Regex.IsMatch(_valor, @"^\d+$") && _valor.Length == 22;
+            return _valor.Length == 22 && Regex.IsMatch(_valor, @"^\d+$") && DvEsValido();
+        }
+
+        private bool DvEsValido()
+        {
+            var calculadora = new CalculadoraDv();
+            var parser = new CbuParser();
+            var cbuEnComponentes = parser.ParseCbuEnComponentes(this.ToString());
+            var (dv1, dv2) = calculadora.CalcularDvs(cbuEnComponentes);
+            return cbuEnComponentes.DvBloque1 == dv1.ToString() && cbuEnComponentes.DvBloque2 == dv2.ToString();
         }
     }
 }

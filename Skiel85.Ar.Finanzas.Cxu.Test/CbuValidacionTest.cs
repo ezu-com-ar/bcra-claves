@@ -11,6 +11,9 @@ namespace Skiel85.Ar.Finanzas.Cxu.Test
         private const string UnCbuDemasiadoLargoStr = "0110012920000091344977777";
         private const string UnCbuDemasiadoCortoStr = "0110012920000091";
         private const string UnCbuConLetrasStr = "011ABCD920000091344977";
+        private const string UnCbuConDvBloque1IncorrectoStr = "0110012020000091344977";
+        private const string UnCbuConDvBloque2IncorrectoStr = "0110012920000091344970";
+
 
         [Fact]
         public void ValidacionOk()
@@ -41,6 +44,22 @@ namespace Skiel85.Ar.Finanzas.Cxu.Test
         {
             var cbuBuilder = new CbuBuilder();
             var cbu = cbuBuilder.CrearCbu(UnCbuConLetrasStr);
+            Assert.False(cbu.EsValido());
+        }
+
+        [Fact]
+        public void CbuConDvBloque1IncorrectoNoValida()
+        {
+            var cbuBuilder = new CbuBuilder();
+            var cbu = cbuBuilder.CrearCbu(UnCbuConDvBloque1IncorrectoStr);
+            Assert.False(cbu.EsValido());
+        }
+
+        [Fact]
+        public void CbuConDvBloque2IncorrectoNoValida()
+        {
+            var cbuBuilder = new CbuBuilder();
+            var cbu = cbuBuilder.CrearCbu(UnCbuConDvBloque2IncorrectoStr);
             Assert.False(cbu.EsValido());
         }
     }
