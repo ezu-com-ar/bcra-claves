@@ -19,35 +19,40 @@ namespace Skiel85.Ar.Finanzas.Cxu.Test
         [Fact]
         public void CreacionDesdeString()
         {
-            var cbu = new Cbu(UnCbuValidoStr);
+            var cbuBuilder = new CbuBuilder();
+            var cbu = cbuBuilder.CrearCbu(UnCbuValidoStr);
             Assert.Equal(UnCbuValidoStr, cbu.ToString());
         }
 
         [Fact]
         public void CreacionDesdeBloques()
         {
-            var cbu = new Cbu(UnCbuValidoBloque1Str, UnCbuValidoBloque2Str);
+            var cbuBuilder = new CbuBuilder();
+            var cbu = cbuBuilder.CrearCbu(UnCbuValidoBloque1Str, UnCbuValidoBloque2Str);
             Assert.Equal(UnCbuValidoStr, cbu.ToString());
         }
 
         [Fact]
         public void CreacionDesdeComponentes()
         {
-            var cbu = new Cbu(UnCbuValidoNroEntidadStr, UnCbuValidoNroSucursalStr, UnCbuValidoNroDvBloque1Str, UnCbuValidoNroCuentaStr, UnCbuValidoNroDvBloque2Str);
+            var cbuBuilder = new CbuBuilder();
+            var cbu = cbuBuilder.CrearCbu(UnCbuValidoNroEntidadStr, UnCbuValidoNroSucursalStr, UnCbuValidoNroDvBloque1Str, UnCbuValidoNroCuentaStr, UnCbuValidoNroDvBloque2Str);
             Assert.Equal(UnCbuValidoStr, cbu.ToString());
         }
 
         [Fact]
         public void CreacionDesdeComponentesCompletandoCeros()
         {
-            var cbu = new Cbu("11", "22", "3", "44", "5");
+            var cbuBuilder = new CbuBuilder();
+            var cbu = cbuBuilder.CrearCbu("11", "22", "3", "44", "5");
             Assert.Equal("0110022300000000000445", cbu.ToString());
         }
 
         [Fact]
         public void CreacionDesdeComponentesNumericos()
         {
-            var cbu = new Cbu(11, 22, 3, 44, 5);
+            var cbuBuilder = new CbuBuilder();
+            var cbu = cbuBuilder.CrearCbu(11, 22, 3, 44, 5);
             Assert.Equal("0110022300000000000445", cbu.ToString());
         }
     }
