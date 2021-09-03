@@ -15,6 +15,16 @@ namespace Skiel85.Ar.Finanzas.Cxu.Test
         }
 
         [Fact]
+        public void MasValidacionesOk()
+        {
+            foreach (var cbuStr in CbusDePrueba.VariosCbusValidos)
+            {
+                var cbu = new Cbu(cbuStr);
+                Assert.True(cbu.EsValido());
+            }
+        }
+
+        [Fact]
         public void CbuDemasiadoLargoNoValida()
         {
             var cbu = new Cbu(CbusDePruebaInvalidos.UnCbuDemasiadoLargoStr);

@@ -14,5 +14,14 @@ namespace Skiel85.Ar.Finanzas.Cxu.Test
         public const string UnCbuValidoNroDvBloque1Str = "9";
         public const string UnCbuValidoNroCuentaStr = "2000009134497";
         public const string UnCbuValidoNroDvBloque2Str = "7";
+
+        public static string[] VariosCbusValidos = new []
+        {
+            "0110376030037695834983",
+            "0070081830004089740113",
+            "0110466430046601954301",
+            "0070096220000002841913",
+            "0140019901401901247953"
+        };
     }
 }
