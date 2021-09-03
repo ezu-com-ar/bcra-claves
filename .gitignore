@@ -1,6 +1,6 @@
 *.suo
 bin
 obj
-/.vs/Skiel85.Ar.Finanzas/DesignTimeBuild/.dtbcache.v2
+.dtbcache.v2
 *.testlog
 testlog.manifest
