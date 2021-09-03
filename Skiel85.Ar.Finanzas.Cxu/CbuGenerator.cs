@@ -18,7 +18,7 @@ namespace Skiel85.Ar.Finanzas.Cxu
             var nroEntidad = _random.Next(1, 999).ToString();
             var nroSucursal = _random.Next(1, 9999).ToString();
             var nroCuenta = _random.Next(1, 999999999).ToString();
-            return new Cbu(nroEntidad, nroSucursal, "0", nroCuenta, "0").CorregirDvs();
+            return new Cbu(nroEntidad, nroSucursal, nroCuenta).CorregirDvs();
         }
     }
 }

@@ -31,6 +31,11 @@ namespace Skiel85.Ar.Finanzas.Cxu
                 CerosAIzq(dvBloque2, 1);
         }
 
+        public Cbu(string nroEntidad, string nroSucursal, string nroCuenta)
+        {
+            _valor = new Cbu(nroEntidad, nroSucursal, "0", nroCuenta, "0").CorregirDvs().ToString();
+        }
+
         public override string ToString()
         {
             return _valor;

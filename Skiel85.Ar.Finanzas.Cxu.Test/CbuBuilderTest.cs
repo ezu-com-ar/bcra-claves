@@ -34,5 +34,12 @@ namespace Skiel85.Ar.Finanzas.Cxu.Test
             var cbu = new Cbu("11", "22", "3", "44", "5");
             Assert.Equal("0110022300000000000445", cbu.ToString());
         }
+
+        [Fact]
+        public void CreacionDesdeComponentesSinDvs()
+        {
+            var cbu = new Cbu(CbusDePrueba.UnCbuValidoNroEntidadStr, CbusDePrueba.UnCbuValidoNroSucursalStr, CbusDePrueba.UnCbuValidoNroCuentaStr);
+            Assert.Equal(CbusDePrueba.UnCbuValidoStr, cbu.ToString());
+        }
     }
 }
