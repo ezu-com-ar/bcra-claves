@@ -35,5 +35,14 @@ namespace Skiel85.Ar.Finanzas.Cxu
         {
             return _valor;
         }
+
+        public string Bloque1 => _valor.Substring(0, 8);
+        public string Bloque2 => _valor.Substring(8, 14);
+        public string IndicacionCvu => _valor.Substring(0, 3);
+        public string NroPsp => _valor.Substring(3, 4);
+        public string DvBloque1 => _valor.Substring(7, 1);
+        public string Reservado => _valor.Substring(8, 1);
+        public string IdCliente => _valor.Substring(9, 12);
+        public string DvBloque2 => _valor.Substring(21, 1);
     }
 }
