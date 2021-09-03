@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Skiel85.Ar.Finanzas.Cxu
 {
-    public class Cvu
+    public class Cvu : ICxu
     {
         private readonly string _valor;
 
@@ -44,5 +44,17 @@ namespace Skiel85.Ar.Finanzas.Cxu
         public string Reservado => _valor.Substring(8, 1);
         public string IdCliente => _valor.Substring(9, 12);
         public string DvBloque2 => _valor.Substring(21, 1);
+
+        public bool EsValido()
+        {
+            var validador = new CvuValidator();
+            return validador.EsValido(this);
+        }
+
+        public Cvu CorregirDvs()
+        {
+            var calculadora = new CalculadoraDvs();
+            return calculadora.CorregirDvs(this);
+        }
     }
 }

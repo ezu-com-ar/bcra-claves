@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Skiel85.Ar.Finanzas.Cxu
 {
-    public class CbuValidator : CxuValidator
+    public class CvuValidator : CxuValidator
     {
     }
 }

@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace Skiel85.Ar.Finanzas.Cxu
 {
-    public class Cbu
+    public class Cbu : ICxu
     {
         private readonly string _valor;
 
