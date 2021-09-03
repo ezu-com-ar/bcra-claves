@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Skiel85.Ar.Finanzas.Cxu.Test
 {
-    public class CbuValidacionTest
+    public class CbuValidatorTest
     {
         [Fact]
         public void ValidacionOk()
