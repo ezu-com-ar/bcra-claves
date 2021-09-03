@@ -56,13 +56,8 @@ namespace Skiel85.Ar.Finanzas.Cxu
 
         public bool EsValido()
         {
-            return _valor.Length == 22 && Regex.IsMatch(_valor, @"^\d+$") && DvsSonValidos();
-        }
-
-        private bool DvsSonValidos()
-        {
-            var calculadora = new CalculadoraDvs();
-            return calculadora.DvsSonValidos(this);
+            var validador = new CbuValidator();
+            return validador.EsValido(this);
         }
 
         public Cbu CorregirDvs()
