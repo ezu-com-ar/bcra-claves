@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Dynamic;
 using System.Text;
 
-namespace Skiel85.Ar.Finanzas.Cxu
+namespace Skiel85.Ar.Bcra.Claves
 {
     public interface ICxu
     {

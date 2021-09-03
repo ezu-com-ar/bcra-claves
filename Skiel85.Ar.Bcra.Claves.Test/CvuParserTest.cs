@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 
-namespace Skiel85.Ar.Finanzas.Cxu.Test
+namespace Skiel85.Ar.Bcra.Claves.Test
 {
     public class CvuParserTest
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Skiel85.Ar.Finanzas.Cxu
+namespace Skiel85.Ar.Bcra.Claves
 {
     public class Cbu : ICxu
     {
