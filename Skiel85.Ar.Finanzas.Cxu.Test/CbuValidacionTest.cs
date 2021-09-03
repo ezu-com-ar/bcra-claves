@@ -15,60 +15,52 @@ namespace Skiel85.Ar.Finanzas.Cxu.Test
         private const string UnCbuConDvBloque2IncorrectoStr = "0110012920000091344970";
         private const string UnCbuConDvsIncorrectosStr = "0110012020000091344970";
 
-
         [Fact]
         public void ValidacionOk()
         {
-            var cbuBuilder = new CbuBuilder();
-            var cbu = cbuBuilder.CrearCbu(UnCbuValidoStr);
+            var cbu = new Cbu(UnCbuValidoStr);
             Assert.True(cbu.EsValido());
         }
 
         [Fact]
         public void CbuDemasiadoLargoNoValida()
         {
-            var cbuBuilder = new CbuBuilder();
-            var cbu = cbuBuilder.CrearCbu(UnCbuDemasiadoLargoStr);
+            var cbu = new Cbu(UnCbuDemasiadoLargoStr);
             Assert.False(cbu.EsValido());
         }
 
         [Fact]
         public void CbuDemasiadoCortoNoValida()
         {
-            var cbuBuilder = new CbuBuilder();
-            var cbu = cbuBuilder.CrearCbu(UnCbuDemasiadoCortoStr);
+            var cbu = new Cbu(UnCbuDemasiadoCortoStr);
             Assert.False(cbu.EsValido());
         }
 
         [Fact]
         public void CbuConLetrasNoValida()
         {
-            var cbuBuilder = new CbuBuilder();
-            var cbu = cbuBuilder.CrearCbu(UnCbuConLetrasStr);
+            var cbu = new Cbu(UnCbuConLetrasStr);
             Assert.False(cbu.EsValido());
         }
 
         [Fact]
         public void CbuConDvBloque1IncorrectoNoValida()
         {
-            var cbuBuilder = new CbuBuilder();
-            var cbu = cbuBuilder.CrearCbu(UnCbuConDvBloque1IncorrectoStr);
+            var cbu = new Cbu(UnCbuConDvBloque1IncorrectoStr);
             Assert.False(cbu.EsValido());
         }
 
         [Fact]
         public void CbuConDvBloque2IncorrectoNoValida()
         {
-            var cbuBuilder = new CbuBuilder();
-            var cbu = cbuBuilder.CrearCbu(UnCbuConDvBloque2IncorrectoStr);
+            var cbu = new Cbu(UnCbuConDvBloque2IncorrectoStr);
             Assert.False(cbu.EsValido());
         }
 
         [Fact]
         public void CorreccionDvs()
         {
-            var cbuBuilder = new CbuBuilder();
-            var cbu = cbuBuilder.CrearCbu(UnCbuConDvsIncorrectosStr);
+            var cbu = new Cbu(UnCbuConDvsIncorrectosStr);
             var cbuCorregido = cbu.CorregirDvs();
             Assert.Equal(UnCbuValidoStr, cbuCorregido.ToString());
         }

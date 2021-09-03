@@ -6,21 +6,12 @@ namespace Skiel85.Ar.Finanzas.Cxu
 {
     public class CalculadoraDvs
     {
-        private readonly CbuParser _parser;
-        private readonly CbuBuilder _builder;
-
-        public CalculadoraDvs()
-        {
-            _parser = new CbuParser();
-            _builder = new CbuBuilder();
-        }
-
-        public (int, int) CalcularDvs(CbuEnComponentes cbu)
+        public (int, int) CalcularDvs(Cbu cbu)
         {
             return (CalcularDvBloque1(cbu), CalcularDvBloque2(cbu));
         }
 
-        public int CalcularDvBloque1(CbuEnComponentes cbu)
+        public int CalcularDvBloque1(Cbu cbu)
         {
             var b1 = Convert.ToInt32(cbu.NroEntidad[0].ToString());
             var b2 = Convert.ToInt32(cbu.NroEntidad[1].ToString());
@@ -38,10 +29,10 @@ namespace Skiel85.Ar.Finanzas.Cxu
             if (auxSuma < suma) { result = 10 - (suma - auxSuma); }
             else { result = auxSuma - suma; }
 
-            return (int) result;
+            return (int)result;
         }
 
-        public int CalcularDvBloque2(CbuEnComponentes cbu)
+        public int CalcularDvBloque2(Cbu cbu)
         {
             var c1 = Convert.ToInt32(cbu.NroCuenta[0].ToString());
             var c2 = Convert.ToInt32(cbu.NroCuenta[1].ToString());
@@ -70,26 +61,14 @@ namespace Skiel85.Ar.Finanzas.Cxu
 
         public bool DvsSonValidos(Cbu cbu)
         {
-            var cbuEnComponentes = _parser.ParseCbuEnComponentes(cbu.ToString());
-            return DvsSonValidos(cbuEnComponentes);
-        }
-
-        public bool DvsSonValidos(CbuEnComponentes cbu)
-        {
             var (dv1, dv2) = CalcularDvs(cbu);
             return cbu.DvBloque1 == dv1.ToString() && cbu.DvBloque2 == dv2.ToString();
         }
 
         public Cbu CorregirDvs(Cbu cbu)
         {
-            var cbuEnComponentes = _parser.ParseCbuEnComponentes(cbu.ToString());
-            return CorregirDvs(cbuEnComponentes);
-        }
-
-        public Cbu CorregirDvs(CbuEnComponentes cbu)
-        {
             var (dv1, dv2) = this.CalcularDvs(cbu);
-            return _builder.CrearCbu(cbu.NroEntidad, cbu.NroSucursal, dv1.ToString(), cbu.NroCuenta, dv2.ToString());
+            return new Cbu(cbu.NroEntidad, cbu.NroSucursal, dv1.ToString(), cbu.NroCuenta, dv2.ToString());
         }
     }
 }

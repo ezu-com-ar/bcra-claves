@@ -19,8 +19,7 @@ namespace Skiel85.Ar.Finanzas.Cxu.Test
         [Fact]
         public void ParseCbuEnBloques()
         {
-            var parser = new CbuParser();
-            var cbu = parser.ParseCbuEnBloques(UnCbuValidoStr);
+            var cbu = new Cbu(UnCbuValidoStr);
             Assert.Equal(UnCbuValidoBloque1Str, cbu.Bloque1);
             Assert.Equal(UnCbuValidoBloque2Str, cbu.Bloque2);
         }
@@ -28,8 +27,7 @@ namespace Skiel85.Ar.Finanzas.Cxu.Test
         [Fact]
         public void ParseCbuEnComponentes()
         {
-            var parser = new CbuParser();
-            var cbu = parser.ParseCbuEnComponentes(UnCbuValidoStr);
+            var cbu = new Cbu(UnCbuValidoStr);
             Assert.Equal(UnCbuValidoNroEntidadStr, cbu.NroEntidad);
             Assert.Equal(UnCbuValidoNroSucursalStr, cbu.NroSucursal);
             Assert.Equal(UnCbuValidoNroDvBloque1Str, cbu.DvBloque1);
