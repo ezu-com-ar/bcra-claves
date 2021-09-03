@@ -9,6 +9,8 @@ namespace Skiel85.Ar.Finanzas.Cxu
     {
         private readonly CalculadoraDvs _calculadoraDvs = new CalculadoraDvs();
 
+        public bool ValidarDvs { get; set; } = true;
+
         private bool LargoValido(ICxu cxu)
         {
             return cxu.ToString().Length == 22;
@@ -21,7 +23,7 @@ namespace Skiel85.Ar.Finanzas.Cxu
 
         private bool DvsSonValidos(ICxu cxu)
         {
-            return _calculadoraDvs.DvsSonValidos(cxu);
+            return !ValidarDvs || _calculadoraDvs.DvsSonValidos(cxu);
         }
 
         public bool EsValido(ICxu cxu)

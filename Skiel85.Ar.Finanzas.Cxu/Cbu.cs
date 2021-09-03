@@ -44,7 +44,11 @@ namespace Skiel85.Ar.Finanzas.Cxu
 
         public bool EsValido()
         {
-            var validador = new CbuValidator();
+            return EsValido(CbuValidator.Default);
+        }
+
+        public bool EsValido(CbuValidator validador)
+        {
             return validador.EsValido(this);
         }
 

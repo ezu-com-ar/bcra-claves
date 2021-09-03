@@ -47,7 +47,11 @@ namespace Skiel85.Ar.Finanzas.Cxu
 
         public bool EsValido()
         {
-            var validador = new CvuValidator();
+            return EsValido(CvuValidator.Default);
+        }
+
+        public bool EsValido(CvuValidator validador)
+        {
             return validador.EsValido(this);
         }
 
@@ -56,5 +60,7 @@ namespace Skiel85.Ar.Finanzas.Cxu
             var calculadora = new CalculadoraDvs();
             return calculadora.CorregirDvs(this);
         }
+
+
     }
 }

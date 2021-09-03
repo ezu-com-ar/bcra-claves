@@ -80,5 +80,13 @@ namespace Skiel85.Ar.Finanzas.Cxu.Test
             var cvu = new Cvu(CvusDePruebaInvalidos.UnCvuConReservadoUtilizadoStr);
             Assert.False(cvu.EsValido());
         }
+
+        [Fact]
+        public void ValidacionDvDesactivable()
+        {
+            var validador = new CvuValidator { ValidarDvs = false };
+            var cvu = new Cvu(CvusDePruebaInvalidos.UnCvuConDvsIncorrectosStr);
+            Assert.True(cvu.EsValido(validador));
+        }
     }
 }

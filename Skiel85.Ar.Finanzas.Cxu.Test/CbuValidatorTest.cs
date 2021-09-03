@@ -66,5 +66,13 @@ namespace Skiel85.Ar.Finanzas.Cxu.Test
             var cbuCorregido = cbu.CorregirDvs();
             Assert.Equal(CbusDePrueba.UnCbuValidoStr, cbuCorregido.ToString());
         }
+
+        [Fact]
+        public void ValidacionDvDesactivable()
+        {
+            var validador = new CbuValidator { ValidarDvs = false };
+            var cbu = new Cbu(CbusDePruebaInvalidos.UnCbuConDvsIncorrectosStr);
+            Assert.True(cbu.EsValido(validador));
+        }
     }
 }
