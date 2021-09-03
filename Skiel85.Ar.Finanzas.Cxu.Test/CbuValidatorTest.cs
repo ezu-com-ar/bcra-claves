@@ -27,22 +27,25 @@ namespace Skiel85.Ar.Finanzas.Cxu.Test
         [Fact]
         public void CbuDemasiadoLargoNoValida()
         {
+            var validador = new CbuValidator { ValidarDvs = false };
             var cbu = new Cbu(CbusDePruebaInvalidos.UnCbuDemasiadoLargoStr);
-            Assert.False(cbu.EsValido());
+            Assert.False(cbu.EsValido(validador));
         }
 
         [Fact]
         public void CbuDemasiadoCortoNoValida()
         {
+            var validador = new CbuValidator { ValidarDvs = false };
             var cbu = new Cbu(CbusDePruebaInvalidos.UnCbuDemasiadoCortoStr);
-            Assert.False(cbu.EsValido());
+            Assert.False(cbu.EsValido(validador));
         }
 
         [Fact]
         public void CbuConLetrasNoValida()
         {
+            var validador = new CbuValidator { ValidarDvs = false };
             var cbu = new Cbu(CbusDePruebaInvalidos.UnCbuConLetrasStr);
-            Assert.False(cbu.EsValido());
+            Assert.False(cbu.EsValido(validador));
         }
 
         [Fact]

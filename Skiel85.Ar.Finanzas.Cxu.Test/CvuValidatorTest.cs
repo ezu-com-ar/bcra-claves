@@ -27,22 +27,25 @@ namespace Skiel85.Ar.Finanzas.Cxu.Test
         [Fact]
         public void CvuDemasiadoLargoNoValida()
         {
+            var validador = new CvuValidator { ValidarDvs = false };
             var cvu = new Cvu(CvusDePruebaInvalidos.UnCvuDemasiadoLargoStr);
-            Assert.False(cvu.EsValido());
+            Assert.False(cvu.EsValido(validador));
         }
 
         [Fact]
         public void CvuDemasiadoCortoNoValida()
         {
+            var validador = new CvuValidator { ValidarDvs = false };
             var cvu = new Cvu(CvusDePruebaInvalidos.UnCvuDemasiadoCortoStr);
-            Assert.False(cvu.EsValido());
+            Assert.False(cvu.EsValido(validador));
         }
 
         [Fact]
         public void CvuConLetrasNoValida()
         {
+            var validador = new CvuValidator { ValidarDvs = false };
             var cvu = new Cvu(CvusDePruebaInvalidos.UnCvuConLetrasStr);
-            Assert.False(cvu.EsValido());
+            Assert.False(cvu.EsValido(validador));
         }
 
         [Fact]
@@ -70,15 +73,17 @@ namespace Skiel85.Ar.Finanzas.Cxu.Test
         [Fact]
         public void CvuConIndicacionCvuIncorrectaNoValida()
         {
+            var validador = new CvuValidator { ValidarDvs = false };
             var cvu = new Cvu(CvusDePruebaInvalidos.UnCvuConIndicacionCvuIncorrectaStr);
-            Assert.False(cvu.EsValido());
+            Assert.False(cvu.EsValido(validador));
         }
 
         [Fact]
         public void CvuConReservadoUtilizadoNoValida()
         {
+            var validador = new CvuValidator { ValidarDvs = false };
             var cvu = new Cvu(CvusDePruebaInvalidos.UnCvuConReservadoUtilizadoStr);
-            Assert.False(cvu.EsValido());
+            Assert.False(cvu.EsValido(validador));
         }
 
         [Fact]

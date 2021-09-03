@@ -26,7 +26,7 @@ namespace Skiel85.Ar.Finanzas.Cxu
             return !ValidarDvs || _calculadoraDvs.DvsSonValidos(cxu);
         }
 
-        public bool EsValido(ICxu cxu)
+        public virtual bool EsValido(ICxu cxu)
         {
             return LargoValido(cxu) && EsNumerico(cxu) && DvsSonValidos(cxu);
         }
