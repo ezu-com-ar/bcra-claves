@@ -18,7 +18,7 @@ namespace Skiel85.Ar.Bcra.Claves
             return cvu.Reservado == "0";
         }
 
-        public override bool EsValido(ICxu cxu)
+        public override bool EsValido(Cxu cxu)
         {
             var cvu = (Cvu) cxu;
             return IndicacionCvuValida(cvu) && ReservadoValido(cvu) && base.EsValido(cxu);

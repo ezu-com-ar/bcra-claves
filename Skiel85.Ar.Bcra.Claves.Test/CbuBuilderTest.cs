@@ -38,7 +38,8 @@ namespace Skiel85.Ar.Bcra.Claves.Test
         [Fact]
         public void CreacionDesdeComponentesSinDvs()
         {
-            var cbu = new Cbu(CbusDePrueba.UnCbuValidoNroEntidadStr, CbusDePrueba.UnCbuValidoNroSucursalStr, CbusDePrueba.UnCbuValidoNroCuentaStr);
+            var cbu = new Cbu(CbusDePrueba.UnCbuValidoNroEntidadStr, CbusDePrueba.UnCbuValidoNroSucursalStr, "0", CbusDePrueba.UnCbuValidoNroCuentaStr, "0");
+            cbu = cbu.CorregirDvs();
             Assert.Equal(CbusDePrueba.UnCbuValidoStr, cbu.ToString());
         }
     }

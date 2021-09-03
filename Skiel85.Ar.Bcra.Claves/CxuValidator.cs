@@ -11,22 +11,22 @@ namespace Skiel85.Ar.Bcra.Claves
 
         public bool ValidarDvs { get; set; } = true;
 
-        private bool LargoValido(ICxu cxu)
+        private bool LargoValido(Cxu cxu)
         {
             return cxu.ToString().Length == 22;
         }
 
-        private bool EsNumerico(ICxu cxu)
+        private bool EsNumerico(Cxu cxu)
         {
             return Regex.IsMatch(cxu.ToString(), @"^\d+$");
         }
 
-        private bool DvsSonValidos(ICxu cxu)
+        private bool DvsSonValidos(Cxu cxu)
         {
             return !ValidarDvs || _calculadoraDvs.DvsSonValidos(cxu);
         }
 
-        public virtual bool EsValido(ICxu cxu)
+        public virtual bool EsValido(Cxu cxu)
         {
             return LargoValido(cxu) && EsNumerico(cxu) && DvsSonValidos(cxu);
         }

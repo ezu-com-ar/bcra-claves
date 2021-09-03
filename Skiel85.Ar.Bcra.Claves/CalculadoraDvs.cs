@@ -6,12 +6,12 @@ namespace Skiel85.Ar.Bcra.Claves
 {
     public class CalculadoraDvs
     {
-        public (int, int) CalcularDvs(ICxu cxu)
+        public (int, int) CalcularDvs(Cxu cxu)
         {
             return (CalcularDvBloque1(cxu), CalcularDvBloque2(cxu));
         }
 
-        public int CalcularDvBloque1(ICxu cxu)
+        public int CalcularDvBloque1(Cxu cxu)
         {
             var c1 = Convert.ToInt32(cxu.Bloque1[0].ToString());
             var c2 = Convert.ToInt32(cxu.Bloque1[1].ToString());
@@ -32,7 +32,7 @@ namespace Skiel85.Ar.Bcra.Claves
             return (int)result;
         }
 
-        public int CalcularDvBloque2(ICxu cxu)
+        public int CalcularDvBloque2(Cxu cxu)
         {
             var c1 = Convert.ToInt32(cxu.Bloque2[0].ToString());
             var c2 = Convert.ToInt32(cxu.Bloque2[1].ToString());
@@ -59,7 +59,7 @@ namespace Skiel85.Ar.Bcra.Claves
             return (int)result;
         }
 
-        public bool DvsSonValidos(ICxu cxu)
+        public bool DvsSonValidos(Cxu cxu)
         {
             var (dv1, dv2) = CalcularDvs(cxu);
             return cxu.DvBloque1 == dv1.ToString() && cxu.DvBloque2 == dv2.ToString();
