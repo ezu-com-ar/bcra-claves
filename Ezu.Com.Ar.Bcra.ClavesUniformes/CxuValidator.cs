@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Ezu.Com.Ar.Bcra.Claves
+namespace Ezu.Com.Ar.Bcra.ClavesUniformes
 {
     public abstract class CxuValidator
     {

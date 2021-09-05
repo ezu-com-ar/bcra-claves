@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 
-namespace Ezu.Com.Ar.Bcra.Claves.Test
+namespace Ezu.Com.Ar.Bcra.ClavesUniformes.Test
 {
     public class CvuParserTest
     {

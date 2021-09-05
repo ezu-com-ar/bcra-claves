@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Ezu.Com.Ar.Bcra.Claves
+namespace Ezu.Com.Ar.Bcra.ClavesUniformes
 {
     public class CxuBuilder
     {

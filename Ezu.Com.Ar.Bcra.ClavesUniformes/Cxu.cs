@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Dynamic;
 using System.Text;
 
-namespace Ezu.Com.Ar.Bcra.Claves
+namespace Ezu.Com.Ar.Bcra.ClavesUniformes
 {
     public abstract class Cxu
     {

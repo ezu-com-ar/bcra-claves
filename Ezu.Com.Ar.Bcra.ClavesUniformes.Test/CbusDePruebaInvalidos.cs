@@ -1,4 +1,4 @@
-﻿namespace Ezu.Com.Ar.Bcra.Claves.Test
+﻿namespace Ezu.Com.Ar.Bcra.ClavesUniformes.Test
 {
     public static class CbusDePruebaInvalidos
     {
