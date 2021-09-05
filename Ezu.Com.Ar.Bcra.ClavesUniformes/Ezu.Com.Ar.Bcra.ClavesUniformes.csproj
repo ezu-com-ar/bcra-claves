@@ -2,6 +2,27 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Version>0.1.0-beta</Version>
+    <PackageId>Ezu.Com.Ar.Bcra.ClavesUniformes.CBU</PackageId>
+    <Authors>Ezequiel Paez</Authors>
+    <Company>ezu.com.ar</Company>
+    <Product>Ezu.Com.Ar.Bcra.ClavesUniformes.CBU</Product>
+    <Description>Validación de CBU y CVU para .Net Core</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <RepositoryUrl>https://github.com/ezu-com-ar/bcra-claves-uniformes</RepositoryUrl>
+    <PackageTags>CBU, CVU, BCRA, bancos, Argentina</PackageTags>
+    <PackageReleaseNotes>Beta</PackageReleaseNotes>
+    <PackageIcon>Icono.png</PackageIcon>
+    <Copyright>2021 Ezequiel Paez</Copyright>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\Icono.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
