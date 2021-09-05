@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Skiel85.Ar.Bcra.Claves", "Skiel85.Ar.Bcra.Claves\Skiel85.Ar.Bcra.Claves.csproj", "{2769E6EB-DA57-4730-A3AA-77F6E0366E64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ezu.Com.Ar.Bcra.Claves", "Ezu.Com.Ar.Bcra.Claves\Ezu.Com.Ar.Bcra.Claves.csproj", "{2769E6EB-DA57-4730-A3AA-77F6E0366E64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skiel85.Ar.Bcra.Claves.Test", "Skiel85.Ar.Bcra.Claves.Test\Skiel85.Ar.Bcra.Claves.Test.csproj", "{8273D45A-B0F1-4614-932B-5723D4FD80A7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ezu.Com.Ar.Bcra.Claves.Test", "Ezu.Com.Ar.Bcra.Claves.Test\Ezu.Com.Ar.Bcra.Claves.Test.csproj", "{8273D45A-B0F1-4614-932B-5723D4FD80A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

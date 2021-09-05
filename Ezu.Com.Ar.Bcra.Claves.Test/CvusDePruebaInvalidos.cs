@@ -1,4 +1,4 @@
-﻿namespace Skiel85.Ar.Bcra.Claves.Test
+﻿namespace Ezu.Com.Ar.Bcra.Claves.Test
 {
     public static class CvusDePruebaInvalidos
     {

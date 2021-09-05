@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Skiel85.Ar.Bcra.Claves.Test
+namespace Ezu.Com.Ar.Bcra.Claves.Test
 {
     public static class CvusDePrueba
     {

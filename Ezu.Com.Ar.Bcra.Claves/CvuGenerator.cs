@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Skiel85.Ar.Bcra.Claves
+namespace Ezu.Com.Ar.Bcra.Claves
 {
     public class CvuGenerator
     {

@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Skiel85.Ar.Bcra.Claves\Skiel85.Ar.Bcra.Claves.csproj" />
+    <ProjectReference Include="..\Ezu.Com.Ar.Bcra.Claves\Ezu.Com.Ar.Bcra.Claves.csproj" />
   </ItemGroup>
 
 </Project>
