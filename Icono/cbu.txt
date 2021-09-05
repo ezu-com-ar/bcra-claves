@@ -1,0 +1,11 @@
+https://favicon.io/favicon-generator/
+
+Text: CBU
+FontColor: #FAA
+BackColor: #500
+Background: Circle
+FontFamily: Bungee
+FontVariant: Regular 400 Normal
+FontSize: 50
+
+https://favicon.io/emoji-favicons/flag-argentina/
