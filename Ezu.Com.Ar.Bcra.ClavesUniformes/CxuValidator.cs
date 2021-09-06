@@ -9,6 +9,9 @@ namespace Ezu.Com.Ar.Bcra.ClavesUniformes
     {
         private readonly CalculadoraDvs _calculadoraDvs = new CalculadoraDvs();
 
+        /// <summary>
+        /// Indica si se realizará la validación de dígitos verificadores.
+        /// </summary>
         public bool ValidarDvs { get; set; } = true;
 
         private bool LargoValido(Cxu cxu)
@@ -26,6 +29,11 @@ namespace Ezu.Com.Ar.Bcra.ClavesUniformes
             return !ValidarDvs || _calculadoraDvs.DvsSonValidos(cxu);
         }
 
+        /// <summary>
+        /// Realiza la validación.
+        /// </summary>
+        /// <param name="cxu">Objeto a validar.</param>
+        /// <returns>True si es válido.</returns>
         public virtual bool EsValido(Cxu cxu)
         {
             return LargoValido(cxu) && EsNumerico(cxu) && DvsSonValidos(cxu);

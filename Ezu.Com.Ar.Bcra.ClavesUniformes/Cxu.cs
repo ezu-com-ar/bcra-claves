@@ -5,22 +5,44 @@ using System.Text;
 
 namespace Ezu.Com.Ar.Bcra.ClavesUniformes
 {
+    /// <summary>
+    /// Representa una Clave Uniforme (CBU o CVU).
+    /// </summary>
     public abstract class Cxu
     {
-        public string Valor { get; }
-        public string Bloque1 => Valor.Substring(0, 8);
-        public string Bloque2 => Valor.Substring(8, 14);
-        public string DvBloque1 => Valor.Substring(7, 1);
-        public string DvBloque2 => Valor.Substring(21, 1);
+        /// <summary>
+        /// Número de CBU o CVU.
+        /// </summary>
+        public string Numero { get; }
 
-        protected Cxu(string valor)
+        /// <summary>
+        /// Primer bloque del CBU o CVU.
+        /// </summary>
+        public string Bloque1 => Numero.Substring(0, 8);
+
+        /// <summary>
+        /// Segundo bloque del CBU o CVU.
+        /// </summary>
+        public string Bloque2 => Numero.Substring(8, 14);
+
+        /// <summary>
+        /// Dígito verificador del primer bloque.
+        /// </summary>
+        public string DvBloque1 => Numero.Substring(7, 1);
+
+        /// <summary>
+        /// Dígito verificador del segundo bloque.
+        /// </summary>
+        public string DvBloque2 => Numero.Substring(21, 1);
+
+        protected Cxu(string numero)
         {
-            Valor = valor;
+            Numero = numero;
         }
 
         protected Cxu(string bloque1, string bloque2)
         {
-            Valor = CerosAIzq(bloque1, 8) + CerosAIzq(bloque2, 14);
+            Numero = CerosAIzq(bloque1, 8) + CerosAIzq(bloque2, 14);
         }
 
         protected static string CerosAIzq(string str, int totalWidth)

@@ -4,15 +4,26 @@ using System.Text;
 
 namespace Ezu.Com.Ar.Bcra.ClavesUniformes
 {
+    /// <summary>
+    /// Genera CBUs válidos pseudo-aleatorios.
+    /// </summary>
     public class CbuGenerator
     {
         private readonly Random _random;
 
+        /// <summary>
+        /// Crea un generador de CBUs.
+        /// </summary>
+        /// <param name="seed">Semilla aleatoria.</param>
         public CbuGenerator(int seed)
         {
             _random = new Random(seed);
         }
 
+        /// <summary>
+        /// Obtiene el siguiente objeto CBU pseudo-aleatorio.
+        /// </summary>
+        /// <returns>Un CBU válido.</returns>
         public Cbu Next()
         {
             var nroEntidad = _random.Next(1, 999).ToString();
