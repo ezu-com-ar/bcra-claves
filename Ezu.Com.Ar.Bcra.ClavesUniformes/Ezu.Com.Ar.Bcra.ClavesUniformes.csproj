@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <Version>0.1.1</Version>
+    <Version>0.1.2</Version>
     <PackageId>Ezu.CBU</PackageId>
     <Authors>Ezequiel Paez</Authors>
     <Company>ezu.com.ar</Company>
@@ -17,6 +17,10 @@
     <PackageIcon>Icono.png</PackageIcon>
     <Copyright>2021 Ezequiel Paez</Copyright>
     <PackageProjectUrl>https://github.com/ezu-com-ar/bcra-claves-uniformes</PackageProjectUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Dev\Ezu\Ezu.Com.Ar.Bcra.ClavesUniformes\Ezu.Com.Ar.Bcra.ClavesUniformes\Ezu.Com.Ar.Bcra.ClavesUniformes.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

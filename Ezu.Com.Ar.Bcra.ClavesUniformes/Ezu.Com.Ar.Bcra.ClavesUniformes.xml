@@ -1,0 +1,298 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Ezu.Com.Ar.Bcra.ClavesUniformes</name>
+    </assembly>
+    <members>
+        <member name="T:Ezu.Com.Ar.Bcra.ClavesUniformes.CalculadoraDvs">
+            <summary>
+            Calcula dígitos verificadores para los dos bloques de CBU o CVU.
+            </summary>
+        </member>
+        <member name="M:Ezu.Com.Ar.Bcra.ClavesUniformes.CalculadoraDvs.CalcularDvs(Ezu.Com.Ar.Bcra.ClavesUniformes.Cxu)">
+            <summary>
+            Obtiene los dígitos verificadores de los dos bloques de CBU o CVU.
+            </summary>
+            <param name="cxu">Objeto CXU para el cuál se calcularán sus dígitos verificadores.</param>
+            <returns>Tupla con los dígitos verificadores correspondientes a cada bloque.</returns>
+        </member>
+        <member name="M:Ezu.Com.Ar.Bcra.ClavesUniformes.CalculadoraDvs.CalcularDvBloque1(Ezu.Com.Ar.Bcra.ClavesUniformes.Cxu)">
+            <summary>
+            Obtiene los dígitos verificadores del primer bloque de CBU o CVU.
+            </summary>
+            <param name="cxu">Objeto CXU para el cuál se calculará el dígito verificador.</param>
+            <returns>Dígitos verificadores correspondientes al primer bloque.</returns>
+        </member>
+        <member name="M:Ezu.Com.Ar.Bcra.ClavesUniformes.CalculadoraDvs.CalcularDvBloque2(Ezu.Com.Ar.Bcra.ClavesUniformes.Cxu)">
+            <summary>
+            Obtiene los dígitos verificadores del segundo bloque de CBU o CVU.
+            </summary>
+            <param name="cxu">Objeto CXU para el cuál se calculará el dígito verificador.</param>
+            <returns>Dígitos verificadores correspondientes al segundo bloque.</returns>
+        </member>
+        <member name="M:Ezu.Com.Ar.Bcra.ClavesUniformes.CalculadoraDvs.DvsSonValidos(Ezu.Com.Ar.Bcra.ClavesUniformes.Cxu)">
+            <summary>
+            Verifica la validez de los dígitos verificadores de un CBU o CVU.
+            </summary>
+            <param name="cxu">Objeto CXU del cual se evaluarán sus dígitos verificadores.</param>
+            <returns>True si los dígitos verificadores son válidos.</returns>
+        </member>
+        <member name="M:Ezu.Com.Ar.Bcra.ClavesUniformes.CalculadoraDvs.CorregirDvs(Ezu.Com.Ar.Bcra.ClavesUniformes.Cbu)">
+            <summary>
+            Produce un nuevo objeto CBU con los dígitos verificadores corregidos de modo tal de que sea válido.
+            </summary>
+            <param name="cbu">Objeto CBU a partir del cual se producirá un nuevo objeto CBU con dígitos verificadores válidos.</param>
+            <returns>Nuevo objeto CBU con dígitos verificadores válidos.</returns>
+        </member>
+        <member name="M:Ezu.Com.Ar.Bcra.ClavesUniformes.CalculadoraDvs.CorregirDvs(Ezu.Com.Ar.Bcra.ClavesUniformes.Cvu)">
+            <summary>
+            Produce un nuevo objeto CVU con los dígitos verificadores corregidos de modo tal de que sea válido.
+            </summary>
+            <param name="cvu">Objeto CVU a partir del cual se producirá un nuevo objeto CVU con dígitos verificadores válidos.</param>
+            <returns>Nuevo objeto CVU con dígitos verificadores válidos.</returns>
+        </member>
+        <member name="T:Ezu.Com.Ar.Bcra.ClavesUniformes.Cbu">
+            <summary>
+            Representa una Clave Bancaria Uniforme (CBU). Los objetos de esta clase son inmutables.
+            </summary>
+        </member>
+        <member name="M:Ezu.Com.Ar.Bcra.ClavesUniformes.Cbu.#ctor(System.String)">
+            <summary>
+            Construye una Clave Bancaria Uniforme (CBU) a partir de su número.
+            </summary>
+            <param name="numero">Número de CBU</param>
+        </member>
+        <member name="M:Ezu.Com.Ar.Bcra.ClavesUniformes.Cbu.#ctor(System.String,System.String)">
+            <summary>
+            Construye una Clave Bancaria Uniforme (CBU) a partir de sus bloques.
+            </summary>
+            <param name="bloque1">Primer bloque de CBU de 8 dígitos.</param>
+            <param name="bloque2">Segundo bloque de CBU de 14 dígitos.</param>
+        </member>
+        <member name="M:Ezu.Com.Ar.Bcra.ClavesUniformes.Cbu.#ctor(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Construye una Clave Bancaria Uniforme (CBU) a partir de sus componentes.
+            </summary>
+            <param name="nroEntidad">Número de entidad. Máximo 3 dígitos.</param>
+            <param name="nroSucursal">Número de sucursal. Máximo 4 dígitos.</param>
+            <param name="dvBloque1">Dígito verificador del primer bloque.</param>
+            <param name="nroCuenta">Número de cuenta. Máximo 13 dígitos.</param>
+            <param name="dvBloque2">Dígito verificador del segundo bloque.</param>
+        </member>
+        <member name="M:Ezu.Com.Ar.Bcra.ClavesUniformes.Cbu.ToString">
+            <summary>
+            Produce una representación de la Clave Bancaria Uniforme (CBU).
+            </summary>
+            <returns>Número de CBU como string.</returns>
+        </member>
+        <member name="P:Ezu.Com.Ar.Bcra.ClavesUniformes.Cbu.NroEntidad">
+            <summary>
+            Número de entidad.
+            </summary>
+        </member>
+        <member name="P:Ezu.Com.Ar.Bcra.ClavesUniformes.Cbu.NroSucursal">
+            <summary>
+            Número de sucursal.
+            </summary>
+        </member>
+        <member name="P:Ezu.Com.Ar.Bcra.ClavesUniformes.Cbu.NroCuenta">
+            <summary>
+            Número de cuenta.
+            </summary>
+        </member>
+        <member name="M:Ezu.Com.Ar.Bcra.ClavesUniformes.Cbu.EsValido">
+            <summary>
+            Determina si el objeto CBU es válido.
+            </summary>
+            <returns>True si es válido.</returns>
+        </member>
+        <member name="M:Ezu.Com.Ar.Bcra.ClavesUniformes.Cbu.EsValido(Ezu.Com.Ar.Bcra.ClavesUniformes.CbuValidator)">
+            <summary>
+            Determina si el objeto CBU es válido, permitiendo personalizar que validaciones se realizarán.
+            </summary>
+            <param name="validador">Validador personalizado.</param>
+            <returns>True si es válido.</returns>
+        </member>
+        <member name="M:Ezu.Com.Ar.Bcra.ClavesUniformes.Cbu.CorregirDvs">
+            <summary>
+            Produce un nuevo objeto CBU con los dígitos verificadores corregidos de modo tal de que sea válido.
+            </summary>
+            <returns>Nuevo objeto CBU con dígitos verificadores válidos.</returns>
+        </member>
+        <member name="T:Ezu.Com.Ar.Bcra.ClavesUniformes.CbuGenerator">
+            <summary>
+            Genera CBUs válidos pseudo-aleatorios.
+            </summary>
+        </member>
+        <member name="M:Ezu.Com.Ar.Bcra.ClavesUniformes.CbuGenerator.#ctor(System.Int32)">
+            <summary>
+            Crea un generador de CBUs.
+            </summary>
+            <param name="seed">Semilla aleatoria.</param>
+        </member>
+        <member name="M:Ezu.Com.Ar.Bcra.ClavesUniformes.CbuGenerator.Next">
+            <summary>
+            Obtiene el siguiente objeto CBU pseudo-aleatorio.
+            </summary>
+            <returns>Un CBU válido.</returns>
+        </member>
+        <member name="T:Ezu.Com.Ar.Bcra.ClavesUniformes.CbuValidator">
+            <summary>
+            Valida un objeto CBU.
+            </summary>
+        </member>
+        <member name="P:Ezu.Com.Ar.Bcra.ClavesUniformes.CbuValidator.Default">
+            <summary>
+            Validador predeterminado. Realiza validación de largo, numérico y dígitos verificadores.
+            </summary>
+        </member>
+        <member name="T:Ezu.Com.Ar.Bcra.ClavesUniformes.Cvu">
+            <summary>
+            Representa una Clave Virtual Uniforme (CVU). Los objetos de esta clase son inmutables.
+            </summary>
+        </member>
+        <member name="M:Ezu.Com.Ar.Bcra.ClavesUniformes.Cvu.#ctor(System.String)">
+            <summary>
+            Construye una Clave Bancaria Uniforme (CVU) a partir de su número.
+            </summary>
+            <param name="numero">Número de CVU</param>
+        </member>
+        <member name="M:Ezu.Com.Ar.Bcra.ClavesUniformes.Cvu.#ctor(System.String,System.String)">
+            <summary>
+            Construye una Clave Virtual Uniforme (CVU) a partir de su número.
+            </summary>
+            <param name="bloque1">Primer bloque de CVU de 8 dígitos.</param>
+            <param name="bloque2">Segundo bloque de CVU de 14 dígitos.</param>
+        </member>
+        <member name="M:Ezu.Com.Ar.Bcra.ClavesUniformes.Cvu.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Construye una Clave Virtual Uniforme (CVU) a partir de sus componentes.
+            </summary>
+            <param name="nroPsp">Número de proveedor de servicios de pago. Máximo 4 dígitos.</param>
+            <param name="dvBloque1">Dígito verificador del primer bloque.</param>
+            <param name="idCliente">Identificador del cliente del PSP. Máximo 12 dígitos.</param>
+            <param name="dvBloque2">Dígito verificador del segundo bloque.</param>
+        </member>
+        <member name="M:Ezu.Com.Ar.Bcra.ClavesUniformes.Cvu.ToString">
+            <summary>
+            Produce una representación de la Clave Virtual Uniforme (CVU).
+            </summary>
+            <returns>Número de CBU como string.</returns>
+        </member>
+        <member name="P:Ezu.Com.Ar.Bcra.ClavesUniformes.Cvu.IndicacionCvu">
+            <summary>
+            Código que indica que es un CVU. En las CVU válidas este código es "000".
+            </summary>
+        </member>
+        <member name="P:Ezu.Com.Ar.Bcra.ClavesUniformes.Cvu.NroPsp">
+            <summary>
+            Número de proveedor de servicios de pago.
+            </summary>
+        </member>
+        <member name="P:Ezu.Com.Ar.Bcra.ClavesUniformes.Cvu.Reservado">
+            <summary>
+            Campo reservado. En las CVU válidas este campo vale "0".
+            </summary>
+        </member>
+        <member name="P:Ezu.Com.Ar.Bcra.ClavesUniformes.Cvu.IdCliente">
+            <summary>
+            Identificador del cliente del PSP.
+            </summary>
+        </member>
+        <member name="M:Ezu.Com.Ar.Bcra.ClavesUniformes.Cvu.EsValido">
+            <summary>
+            Determina si el objeto CVU es válido.
+            </summary>
+            <returns>True si es válido.</returns>
+        </member>
+        <member name="M:Ezu.Com.Ar.Bcra.ClavesUniformes.Cvu.EsValido(Ezu.Com.Ar.Bcra.ClavesUniformes.CvuValidator)">
+            <summary>
+            Determina si el objeto CVU es válido, permitiendo personalizar que validaciones se realizarán.
+            </summary>
+            <param name="validador">Validador personalizado.</param>
+            <returns>True si es válido.</returns>
+        </member>
+        <member name="M:Ezu.Com.Ar.Bcra.ClavesUniformes.Cvu.CorregirDvs">
+            <summary>
+            Produce un nuevo objeto CVU con los dígitos verificadores corregidos de modo tal de que sea válido.
+            </summary>
+            <returns>Nuevo objeto CVU con dígitos verificadores válidos.</returns>
+        </member>
+        <member name="T:Ezu.Com.Ar.Bcra.ClavesUniformes.CvuGenerator">
+            <summary>
+            Genera CVUs válidos pseudo-aleatorios.
+            </summary>
+        </member>
+        <member name="M:Ezu.Com.Ar.Bcra.ClavesUniformes.CvuGenerator.#ctor(System.Int32)">
+            <summary>
+            Crea un generador de CVUs.
+            </summary>
+            <param name="seed">Semilla aleatoria.</param>
+        </member>
+        <member name="M:Ezu.Com.Ar.Bcra.ClavesUniformes.CvuGenerator.Next">
+            <summary>
+            Obtiene el siguiente objeto CVU pseudo-aleatorio.
+            </summary>
+            <returns>Un CVU válido.</returns>
+        </member>
+        <member name="T:Ezu.Com.Ar.Bcra.ClavesUniformes.CvuValidator">
+            <summary>
+            Valida un objeto CVU.
+            </summary>
+        </member>
+        <member name="P:Ezu.Com.Ar.Bcra.ClavesUniformes.CvuValidator.Default">
+            <summary>
+            Validador predeterminado. Realiza validación de largo, numérico, dígitos verificadores y campos fijos.
+            </summary>
+        </member>
+        <member name="M:Ezu.Com.Ar.Bcra.ClavesUniformes.CvuValidator.EsValido(Ezu.Com.Ar.Bcra.ClavesUniformes.Cxu)">
+            <summary>
+            Realiza la validación.
+            </summary>
+            <param name="cxu">Objeto a validar.</param>
+            <returns>True si es válido.</returns>
+        </member>
+        <member name="T:Ezu.Com.Ar.Bcra.ClavesUniformes.Cxu">
+            <summary>
+            Representa una Clave Uniforme (CBU o CVU).
+            </summary>
+        </member>
+        <member name="P:Ezu.Com.Ar.Bcra.ClavesUniformes.Cxu.Numero">
+            <summary>
+            Número de CBU o CVU.
+            </summary>
+        </member>
+        <member name="P:Ezu.Com.Ar.Bcra.ClavesUniformes.Cxu.Bloque1">
+            <summary>
+            Primer bloque del CBU o CVU.
+            </summary>
+        </member>
+        <member name="P:Ezu.Com.Ar.Bcra.ClavesUniformes.Cxu.Bloque2">
+            <summary>
+            Segundo bloque del CBU o CVU.
+            </summary>
+        </member>
+        <member name="P:Ezu.Com.Ar.Bcra.ClavesUniformes.Cxu.DvBloque1">
+            <summary>
+            Dígito verificador del primer bloque.
+            </summary>
+        </member>
+        <member name="P:Ezu.Com.Ar.Bcra.ClavesUniformes.Cxu.DvBloque2">
+            <summary>
+            Dígito verificador del segundo bloque.
+            </summary>
+        </member>
+        <member name="P:Ezu.Com.Ar.Bcra.ClavesUniformes.CxuValidator.ValidarDvs">
+            <summary>
+            Indica si se realizará la validación de dígitos verificadores.
+            </summary>
+        </member>
+        <member name="M:Ezu.Com.Ar.Bcra.ClavesUniformes.CxuValidator.EsValido(Ezu.Com.Ar.Bcra.ClavesUniformes.Cxu)">
+            <summary>
+            Realiza la validación.
+            </summary>
+            <param name="cxu">Objeto a validar.</param>
+            <returns>True si es válido.</returns>
+        </member>
+    </members>
+</doc>
