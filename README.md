@@ -2,12 +2,13 @@
 
 Este paquete contiene estructuras para trabajar con CBU (Clave Bancaria Uniforme) y CVU (Clave Virtual Uniforme) según la definición del BCRA (Argentina).
 
-[![nuget](https://img.shields.io/nuget/v/Ezu.CBU.svg)](https://www.nuget.org/packages/Ezu.CBU/) ![Argentina](https://www.countryflags.io/ar/flat/16.png)
+[![nuget](https://img.shields.io/nuget/v/Ezu.CBU.svg)](https://www.nuget.org/packages/Ezu.CBU/)
+![Argentina](https://flagcdn.com/h20/ar.png)
 
 
 ## Instalación
 ```
-Install-Package Ezu.CBU -Version 0.1.0
+Install-Package Ezu.CBU -Version 0.1.2
 ```
 
 ## Modo de uso
