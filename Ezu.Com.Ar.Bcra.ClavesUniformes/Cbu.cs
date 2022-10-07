@@ -97,5 +97,24 @@ namespace Ezu.Com.Ar.Bcra.ClavesUniformes
             var calculadora = new CalculadoraDvs();
             return calculadora.CorregirDvs(this);
         }
+
+        /// <summary>
+        /// Obtiene el nombre de la entidad bancaria correspondiente al CBU.
+        /// </summary>
+        /// <returns>El nombre de la entidad bancaria correspondiente al CBU.</returns>
+        public string GetNombreEntidad()
+        {
+            return GetNombreEntidad(CbuEntidades.Default);
+        }
+
+        /// <summary>
+        /// Obtiene el nombre de la entidad bancaria correspondiente al CBU.
+        /// </summary>
+        /// <param name="entidades">Diccionario de entidades.</param>
+        /// <returns>El nombre de la entidad bancaria correspondiente al CBU.</returns>
+        public string GetNombreEntidad(CbuEntidades entidades)
+        {
+            return entidades.GetNombreEntidad(this);
+        }
     }
 }
